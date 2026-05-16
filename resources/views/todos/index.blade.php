@@ -20,6 +20,15 @@
                 class="w-full border rounded p-3 mb-3"
             ></textarea>
 
+            <input
+                 type="date"
+                 name="due_date"
+                class="w-full border rounded p-3 mb-3">
+
+            <input
+                  type="time"
+                    name="due_time"
+                    class="w-full border rounded p-3 mb-3">
             <button class="bg-black text-white px-4 py-2 rounded">
                 Add Todo
             </button>
@@ -36,6 +45,19 @@
                 <p class="text-gray-600">
                     {{ $todo->description }}
                 </p>
+
+                @if($todo->due_date)
+
+                    <p class="text-sm text-gray-500 mt-2">
+                        Due:
+                        {{ $todo->due_date }}
+
+                        @if($todo->due_time)
+                            at {{ $todo->due_time }}
+                        @endif
+                    </p>
+
+                @endif
 
             </div>
 

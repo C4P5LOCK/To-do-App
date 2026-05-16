@@ -11,5 +11,7 @@ class Todo extends Model
         'description',
         'is_completed',
         'user_id',
+        'due_date',
+        'due_time'
     ];
 }
