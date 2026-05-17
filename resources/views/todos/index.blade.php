@@ -1,4 +1,8 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('title', 'My Todos')
+
+@section('content')
 
     <div class="max-w-3xl mx-auto py-10">
 
@@ -127,4 +131,4 @@
 @endforeach
     
 
-</x-app-layout>
+@endsection

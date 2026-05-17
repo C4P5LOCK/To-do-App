@@ -7,12 +7,32 @@ use App\Models\Todo;
 
 class TodoController extends Controller
 {
-    public function index()
-    {
-        $todos = auth()->user()->todos()->latest()->get();
+    // public function index()
+    // {
+    //     $todos = auth()->user()->todos()->latest()->get();
 
-        return view('todos.index', compact('todos'));
+    //     return view('todos.index', compact('todos'));
+    // }
+
+    public function index(Request $request)
+{
+    $query = auth()->user()->todos();
+
+    // FILTERING
+    if ($request->filter == 'completed') {
+
+        $query->where('is_completed', true);
+
+    } elseif ($request->filter == 'pending') {
+
+        $query->where('is_completed', false);
+
     }
+
+    $todos = $query->latest()->get();
+
+    return view('todos.index', compact('todos'));
+}
 
     public function store(Request $request)
     {
