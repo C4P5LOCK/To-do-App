@@ -15,7 +15,7 @@
         <h2 class="text-xl font-bold mb-6">Todos App</h2>
 
         <ul class="space-y-4">
-
+            <li><a href="#">Create Todo</a></li>
             <li><a href="/todos">All Todos</a></li>
             <li><a href="/todos?filter=completed">Completed</a></li>
             <li><a href="/todos?filter=pending">Pending</a></li>
